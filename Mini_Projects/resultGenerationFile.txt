@@ -1,0 +1,17 @@
+
+
+Printing Student Records...
+
+Rollno		Percentage		Name
+
+1		75.000000		varan
+
+2		92.000000		raj
+
+
+Topper list...
+
+Rollno		Percentage		Name
+
+2		92.000000		raj
+1		75.000000		varan

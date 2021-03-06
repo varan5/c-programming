@@ -1,0 +1,103 @@
+
+#include<stdio.h>
+
+struct identity {
+
+    int rollno;
+    char name[100];
+    float per;
+    int marks;
+};
+
+typedef struct identity identity;
+
+struct date {
+    int day;
+    int month;
+    int year;
+};
+
+typedef struct date date;
+
+void scanResult(identity s1[100], int size) {
+    int i;
+    for(i=0; i<size; i++) {
+        printf("\n\n\t\t\t\tRecord %d/%d",i+1,size);
+        printf("\nEnter Rollno\t");
+        fflush(stdin);
+        scanf("%d",&s1[i].rollno);
+        printf("\nEnter Name\t");
+        fflush(stdin);
+        gets(s1[i].name);
+        do {
+        printf("\nEnter Marks out of 600\t");
+        fflush(stdin);
+        scanf("%d",&s1[i].marks);
+        } while(marks>=0 && marks<=600);
+        s1[i].per = (s1[i].marks*100)/600;
+    }
+
+}
+
+void printResult(identity s1[100], int size) {
+    int i;
+    FILE *fp;
+    fp=fopen("F:/C Programming/Notepad saved C programs/C_PROJECTS/resultGenerationFile.txt","w+");
+    fprintf(fp,"\n\nPrinting Student Records...\n\n");
+    printf("\n\n\nPrinting Records...\n\n");
+    printf("Rollno\t\tPercentage\t\tName\n");
+    fprintf(fp,"Rollno\t\tPercentage\t\tName\n");
+    for(i=0; i<size; i++) {
+        printf("\n%d\t\t%f\t\t%s", s1[i].rollno, s1[i].per, s1[i].name);
+        fprintf(fp,"\n%d\t\t%f\t\t%s\n", s1[i].rollno, s1[i].per, s1[i].name);
+    }
+    fclose(fp);
+}
+
+void sortPercentage(identity s1[100], int size) {
+    int i,j;
+    identity temp;
+    for(i=size-1; i>0; i--) {
+        for(j=0; j<i; j++) {
+            if(s1[j].per > s1[j+1].per) {
+                temp=s1[j];
+                s1[j]=s1[j+1];
+                s1[j+1]=temp;
+            }
+        }
+    }
+}
+
+void sortedResult(identity s1[100], int size) {
+    int i;
+    char ch;
+    FILE *fp;
+    fp=fopen("F:/C Programming/Notepad saved C programs/C_PROJECTS/resultGenerationFile.txt","a+");
+    printf("\n\nPress 'Enter key' to view the Topper list\tEnter 'E' to Exit\n");
+    fflush(stdin);
+    scanf("%c",&ch);
+    if(ch=='E' || ch=='e')
+        exit(0);
+    printf("\n\n\nPrinting SORTED Records...\n\n");
+    fprintf(fp,"\n\nTopper list...\n\n");
+    printf("Rollno\t\tPercentage\t\tName\n");
+    fprintf(fp,"Rollno\t\tPercentage\t\tName\n");
+    for(i=size-1; i>=0; i--) {
+        printf("\n%d\t\t%f\t\t%s", s1[i].rollno, s1[i].per, s1[i].name);
+        fprintf(fp,"\n%d\t\t%f\t\t%s", s1[i].rollno, s1[i].per, s1[i].name);
+    }
+    fclose(fp);
+}
+
+int main() {
+    int n;
+    identity s1[100];
+    printf("\n\nEnter number of Students to Record\t");
+    scanf("%d",&n);
+    scanResult(s1, n);
+    printResult(s1, n);
+    sortPercentage(s1, n);
+    sortedResult(s1, n);
+    return 0;
+
+}

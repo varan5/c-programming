@@ -1,0 +1,129 @@
+
+	BOOKING ID = 1 
+Total Adult = 1
+Ticket Price = 500
+
+Adult Person 1
+Name = lovepreet
+Age = 29
+Gender = f
+
+	TOTAL PASSENGERS = 1
+
+Start location = pune 
+Drop location = kanpur 
+
+
+
+	SEAT-TYPE SELECTION
+Seat-type = 3nd tier AC class 
+Seat-type price = Rs 1500 per person 
+
+	TAX INFORMATION
+
+Total Railway Tax = 25 
+Internet handling charges = 25 
+
+	DISCOUNT INFORMATION
+
+
+	FINAL PRICE INFORMATION
+1 x Adult(RS 500) = 500
+0 x Children(RS 250) = 0
+0 x Aged(RS 250) = 0
+Total fair for Seat = 500
+Fair for seat type = 1500
+Fair for distance = 250
+Fair for tax = 50
+Discount amount = 0
+
+		FINAL PAYABLE AMOUNT = 2300
+
+Fair for number of seat reservation = 500
+Fair for seat type = 1500
+Fair for distance = 250
+Fair for tax = 50
+Discount amount = 0
+FINAL PAYABLE AMOUNT = 2300
+
+***********************************************************************************
+
+	DISTANCE ESTIMATION
+
+Distance = 1300 km
+Distance price = Rs 250 per person
+	BOOKING ID = 1 
+Total Adult = 1
+Ticket Price = 500
+
+Adult Person 1
+Name = Varandeep Singh Bhalla
+Age = 18
+Gender = m
+
+	TOTAL PASSENGERS = 1
+
+Start location = d 
+Drop location = d 
+
+
+	BOOKING ID = 1 
+Total Adult = 1
+Ticket Price = 500
+
+Adult Person 1
+Name = Varandeep singh bhalla
+Age = 18
+Gender = m
+
+Children 1
+Name = Raj
+Age = 5
+Gender = m
+Total Children = 1
+Ticket Price = 250
+
+	TOTAL PASSENGERS = 2
+
+Start location = Pune 
+Drop location = Punjab 
+
+
+
+	SEAT-TYPE SELECTION
+Seat-type = Sleeper class 
+Seat-type price = Rs 1000 per person 
+
+	TAX INFORMATION
+
+Total Railway Tax = 25 
+Internet handling charges = 25 
+
+	DISCOUNT INFORMATION
+
+
+	FINAL PRICE INFORMATION
+1 x Adult(RS 500) = 500
+1 x Children(RS 250) = 250
+0 x Aged(RS 250) = 0
+Total fair for Seat = 750
+Fair for seat type = 2000
+Fair for distance = 500
+Fair for tax = 50
+Discount amount = 0
+
+		FINAL PAYABLE AMOUNT = 3300
+
+Fair for number of seat reservation = 750
+Fair for seat type = 2000
+Fair for distance = 500
+Fair for tax = 50
+Discount amount = 0
+FINAL PAYABLE AMOUNT = 3300
+
+***********************************************************************************
+
+	DISTANCE ESTIMATION
+
+Distance = 1000 km
+Distance price = Rs 250 per person

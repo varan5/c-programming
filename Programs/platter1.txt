@@ -1,0 +1,353 @@
+
+#include<stdio.h>
+
+int n,i;
+char str[20],str1[20],str2[20];
+
+void reverse() {
+    int rem,rev=0;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    while(n>0) {
+        rem=n%10;
+        rev=rev*10+rem;
+        n/=10;
+    }
+    printf("Reversed number is %d ",rev);
+}
+
+void palindrome() {
+    int rem,rev=0,temp;
+    temp=n;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    while(n>0) {
+        rem=n%10;
+        rev=rev*10+rem;
+        n/=10;
+    }
+    if(rev==temp)
+        printf("Palindrome number");
+    else
+        printf("Not a Paindrome number");
+}
+
+void factorial() {
+    int fact=1;
+    printf("Enter a number to find its Factorial ");
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+        fact=fact*i;
+    printf("Factorial of %d is %d ",n,fact);
+}
+
+void multiplication() {
+    int ans=0;
+    printf("Enter a number to find its Multiplicatiion table ");
+    scanf("%d",&n);
+    for(i=1; i<=10; i++)
+        ans=n*i;
+    printf("\n%d * %d = %d ",n,i,ans);
+}
+
+void swap() {
+    int temp,n1,n2;
+    printf("Enter 1st number ");
+    scanf("%d",&n1);
+    printf("Enter 2nd number ");
+    scanf("%d",&n2);
+    temp=n1;
+    n1=n2;
+    n2=temp;
+    printf("Swapped 1st number is %d",n1);
+    printf("Swapped 2nd number is %d",n2);
+}
+
+void power() {
+    int x,y,power=1;
+    printf("Enter a base ");
+    scanf("%d",&x);
+    printf("Enter an exponent ");
+    scanf("%d",&y);
+    for(i=1; i<=y; i++)
+        power=power*x;
+    printf("%d^%d : %d ",x,y,power);
+}
+
+void amstrong() {
+    int rem,temp,ams=0;
+    printf("Enter a number to check whether Amstrong or Not ");
+    scanf("%d",&n);
+    temp=n;
+    while(n>0) {
+        rem=n%10;
+        ams=ams+rem*rem*rem;
+        n/=10;
+    }
+    if(temp==ams)
+        printf("Amstrong number");
+    else
+        printf("Not an Amstrong number");
+
+}
+
+void prime() {
+    int flag=0;
+    printf("Enter a number to check whether Prime or Not ");
+    scanf("%d",&n);
+    for(i=2; i<n/2; i++) {
+        if(n%i==0)
+            flag=1;
+            break;
+    }
+    if(flag==1)
+        printf("Prime number");
+    else
+        printf("Not a Prime number");
+}
+
+void perfect() {
+    int sum=0;
+    printf("Enter a number to check whether Perfect or Not ");
+    scanf("%d",&n);
+    for(i=1; i<n; i++) {
+        if(n%i==0)
+            sum=sum+i;
+    }
+    if(n==sum)
+        printf("Perfect number");
+    else
+        printf("Not a Perfect number");
+}
+
+void fibonacci() {
+    int f1=0,f2=1,f3,i;
+    printf("Enter a number upto which you want Fibonacci series ");
+    scanf("%d",&n);
+    for(i=0; i<n; i++) {
+        f3=f1+f2;
+        f1=f2;
+        f2=f3;
+    }
+    printf("Series is: ",f1,f2,f3);
+}
+
+
+
+void slenght() {
+    int x=0;
+    printf("Enter a string to find its length ");
+    gets(str);
+    while(str[x]!='\0')
+        x++;
+    printf("Lenght of %s is %d ",str,x);
+}
+
+void sreverse() {
+    char temp;
+    int x=0,y=8;
+    printf("Enter a string to be reversed");
+    gets(str);
+    while(x<y) {
+        temp=str[x];
+        str[x]=str[y];
+        str[y]=str[x];
+        x++;
+        y--;
+    }
+    printf("Reversed string is %s ",str);
+}
+
+void scopy() {
+    printf("Enter string1 ");
+    gets(str1);
+    fflush(stdin);
+    printf("Enter string2 ");
+    gets(str2);
+    int i=0;
+    while(str2[i]!='\0') {
+        str1[i]=str2[i];
+        i++;
+    }
+    str1[i]='\0';
+    printf("String1 is %s ",str1);
+    printf("String2 is %s ",str2);
+}
+
+void sconcantenate() {
+    int x=0,y=8;
+    printf("Enter string1 ");
+    gets(str1);
+    fflush(stdin);
+    printf("Enter string2 ");
+    gets(str2);
+    while(str2[x]!='\0') {
+        str1[y]=str2[x];
+        x+=1;
+        y-=1;
+    }
+    str1[y]='\0';
+    printf("String1 ",str1);
+    printf("String2 ",str2);
+}
+
+void scompare() {
+
+}
+
+void stoggle() {
+
+}
+
+void bubbleSort() {
+    int arr[8],i,temp,j;
+    printf("\nEnter an array of 8 eleements ");
+    for(i=0; i<8; i++);
+        scanf("%d",&arr[i]);
+        printf("\nEntered array is ");
+    for(i=0;i<8;i++)
+        printf("%d",arr[i]);
+    for(i=8;i>0;i--) {
+        for(j=0;j<i;j++) {
+            if(arr[j]>arr[j+1]) {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    printf("Sorted array is ");
+    for(i=0; i<8;  i++)
+        printf("%d",arr[i]);
+}
+
+void selectionSort() {
+
+
+}
+
+void sequentialSearch() {
+    int arr[8],i,val,flag=0;
+    printf("\nEnter an array of 8 elements ");
+    for(i=0; i<8; i++)
+        scanf("%d",&arr[i]);
+    printf("\nEntered array is ");
+    for(i=0; i<8; i++)
+            printf("%d",arr[i]);
+    printf("\nEnter a value to be Searched in the entered array ");
+    scanf("%d",&val);
+    for(i=0; i<8; i++)
+        if(arr[i]==val) {
+            flag=1;
+            break;
+    }
+    if(flag==1)
+        printf("Value %d found at index %d ",val,i);
+    else
+        printf("Value Not found");
+}
+
+void binarySearch() {
+    int arr[8],i,val;
+    int mid,x=0,y=7;
+    printf("\nEnter an array of 8 elements ");
+    for(i=0; i<8; i++)
+        scanf("%d",&arr[i]);
+    printf("\nEntered array is ");
+    for(i=0; i<8; i++)
+        printf("%d",arr[i]);
+    printf("Enter a value to be searched in the entered array ");
+    scanf("%d",&val);
+    while(x<=y) {
+        mid=(x+y)/2;
+        if(val==mid)
+            printf("Value %d found at index %d",val,mid);
+        else if(val<mid)
+            y=mid-1;
+        else if(val>mid)
+            x=mid+1;
+    }
+}
+
+int menu() {
+    int ch;
+    printf("\nEnter  1 to  Reverse a number");
+    printf("\nEnter  2 to  check Palindrome or Not");
+    printf("\nEnter  3 to  find Factorial");
+    printf("\nEnter  4 to  Multiplication table");
+    printf("\nEnter  5 to  Swap numbers");
+    printf("\nEnter  6 to  find Power");
+    printf("\nEnter  7 to  check Amstrong number or Not");
+    printf("\nEnter  8 to  check Prime number or Not");
+    printf("\nEnter  9 to  check Perfect number or Not");
+    printf("\nEnter 10 to  find Fibonacci series");
+    printf("\nEnter 11 to  find Lenght of a string");
+    printf("\nEnter 12 to  Reverse a string");
+    printf("\nEnter 13 to  Copy a string");
+    printf("\nEnter 14 to  Concantenate a string");
+    printf("\nEnter 15 to  Compare strings");
+    printf("\nEnter 16 to  Toggle strings");
+    printf("\nEnter 17 to  BubbleSort");
+    printf("\nEnter 18 to  SelectionSort");
+    printf("\nEnter 19 to  SequentialSearch");
+    printf("\nEnter 20 to  BinarySerach");
+    printf("\n\nEnter your choice ");
+    scanf("%d",&ch);
+}
+
+int main() {
+    int n;
+    char choice;
+    do {
+        switch(menu()) {
+        case  1: reverse();
+                 break;
+        case  2: palindrome();
+                 break;
+        case  3: factorial();
+                 break;
+        case  4: multiplication();
+                 break;
+        case  5: swap();
+                 break;
+        case  6: power();
+                 break;
+        case  7: amstrong();
+                 break;
+        case  8: prime();
+                 break;
+        case  9: perfect();
+                 break;
+        case 10: fibonacci();
+                 break;
+        case 11: slenght();
+                 break;
+        case 12: sreverse();
+                 break;
+        case 13: scopy();
+                 break;
+        case 14: sconcantenate();
+                 break;
+        case 15: //scompare();
+                 break;
+        case 16: //stoggle();
+                 break;
+
+        case 17: bubbleSort();
+                 break;
+        case 18: //selectionSort();
+                 break;
+        case 19: sequentialSearch();
+                 break;
+        case 20: binarySearch();
+                 break;
+        default: printf("\nPlease enter correct choice!");
+
+        }
+
+        printf("Do you want to continue? (y/n)");
+        fflush(stdin);
+        scanf("%c",&choice);
+    }   while(choice=='y'||choice=='Y');
+    return 0;
+}

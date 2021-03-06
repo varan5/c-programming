@@ -1,0 +1,27 @@
+						//Calculating length of a string.
+
+#include<stdio.h>
+#include<string.h>
+void scanString(char str[]) {
+    printf("Enter a string:\n");
+    scanf("%19s",str);
+}
+void printString(char str[]) {
+    printf("Entered string is:\n%s",str);
+
+}
+int slenght(char str[]) {
+    int p=0;
+    while(str[p]!='\0')
+        p++;
+    return p;
+}
+int main() {
+    int flag;
+    char str[20];
+    scanString(str);
+    printString(str);
+    flag=slenght(str);
+    printf("\nLenght is:%d\n",flag);
+    return 0;
+}

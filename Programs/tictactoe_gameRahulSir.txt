@@ -1,0 +1,109 @@
+//Micro Project (TIC-TAC-TOE).
+
+#include<stdio.h>
+
+void gameName() {
+    printf("\tTicTacToe");
+}
+
+void clearBoard(char m[][3],int r,int c) {
+    int i,j;
+    for(i=0;i<r;i++)
+        for(j=0;j<c;j++)
+                m[i][j]=' ';
+}
+
+void displayBoard(char m[][3],int r,int c) {
+    int i,j;
+    printf("\n");
+    for(i=0;i<r;i++) {
+        printf("\n");
+            for(j=0;j<c;j++)
+                printf("[%c]",m[i][j]);
+    }
+}
+
+int isfull(char m,int r,int c) {
+    int i,j;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            m[i][j]==' ';
+            return 0;
+    return 1;
+}
+
+int validateMove(char m[][3],int r,int c,int x,int y) {
+    if(x<0||x>=r)
+        return 0;
+    else if(y<0||y>=c)
+        return 0;
+    else if(m[i][j]!=' ')
+        return 0;
+    return 1;
+}
+
+int checkWin(char m[][3],int r,int c,char sym) {
+    int i;
+    for(i=0;i<r;i++)
+        if(m[i][0]=sym && m[i][1]=sym && m[i][2]=sym)
+            return 1;
+    for(i=0;i<c;i++)
+        if(m[0][i]=sym && m[1][i]=sym && m[2][i]=sym)
+            return 1;
+    if(m[0][0]=sym && m[1][1]=sym && m[2][2])
+        return 1;
+    if(m[0][2]=sym && m[1][1]=sym && m[2][0])
+        return 1;
+    return 0;
+    }
+}
+
+void ticTacToe() {
+    int x,y;
+    char mat[3][3];
+    char player1,player2;
+    char choice1,choice2;
+    gameName();
+    clearBoard(mat,3,3);
+    displayBoard(mat,3,3);
+    printf("Enter name of player1 ");
+    fflush(stdin);
+    scanf("%19c",&player1);
+    symbol1='x';
+    printf("Enter name of player2 ");
+    fflush(stdin);
+    scanf("%19c",&player2);
+    symbol2='0';
+    isfull(mat,3,3);
+    printf("Symbol for %c is %c ",player1,symbol1);
+    printf("Symbol for %c is %c ",player2,symbol2);
+    int current=1,flag=0;
+    while(!isfull) {
+        if(current==1) {
+            printf("Enter position for %c , symbol is %c ",player1,symbol1);
+            printf("Enter position of Row (0-2) ");
+            scanf("%d",&x);
+            printf("Enter position of Column (0-2) ");
+            scanf("%d",&y);
+            if(validateMove(mat,3,3,x,y))
+                mat[x][y]=symbol1;
+            if(checkWin(mat,3,3,symbol1)) {
+                displayBoard(mat,3,3);
+                printf("%c Wins!!!",player1);
+            }
+    }
+        current=2;
+}
+
+int main() {
+    char ch;
+    do {
+        ticTacToe();
+        printf("\n\nDo you want to play again? (y/n):\n");
+        fflush(stdin);
+        scanf("%c",&ch);
+    }
+        while(ch=='y'||ch=='Y');
+
+    return 0;
+}

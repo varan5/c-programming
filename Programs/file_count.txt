@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+    FILE *fp;
+    char ch;
+    int s=0,l=0,a=0;
+    fopen("H:\C Programming\Notepad saved C programs\multiplication _table","r");
+    while(1) {
+        ch=fgetc(fp);
+        if(ch==EOF)
+            break;
+        a++;
+        if(ch==' ')
+            s++;
+        if(ch=='\n')
+            l++;
+    }
+    fclose(fp);
+    printf("Number of letters = %d",a);
+    printf("Number of spaces = %d",s);
+    printf("Number of lines = %d",l);
+    return 0;
+}

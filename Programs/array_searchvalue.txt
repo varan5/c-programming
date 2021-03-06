@@ -1,0 +1,38 @@
+//Program to find a value in an entered array.
+
+#include<stdio.h>
+
+void scanArray(int a[],int s) {
+    int i;
+    printf("Enter an array of 7 numbers:\n");
+    for(i=0;i<s;i++)
+        scanf("%d",&a[i]);
+}
+
+void printArray(int a[],int s) {
+    int i;
+    printf("The array is:\n");
+    for(i=0;i<s;i++)
+        printf("\n%d",a[i]);
+}
+int findValue(int a[],int s,int x) {
+    int i;
+    for(i=0;i<s;i++) {
+    if(a[i]==x)
+        return i;
+    }
+    return 2;
+}
+int main() {
+    int arr[6],val,result;
+    scanArray(arr,7);
+    printArray(arr,7);
+    printf("Enter a value to be found in an array\n:");
+    scanf("%d",&val);
+    result=findValue(arr,7,val);
+    if(result==2)
+        printf("Value not found in the array:\n");
+    else
+        printf("Index of the value is%d:\n",result);
+    return 0;
+}

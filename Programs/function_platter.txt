@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fact(int x) {
+    int i,fact=1;
+    for(i=1;i<=x;i++) {
+        fact=fact*i;
+    }
+    return fact;
+}
+int prime(int y) {
+    int i;
+    for(i=2;i<y/2;i++) {
+        if(y%2==0)
+        return 0;
+    }
+    return 1;
+}
+int main() {
+    int choice;
+    printf("WELCOME TO WORLD OF PROGRAMMING!:\n\n ");
+    printf("Enter 1 for Factorial of a number:\n ");
+    printf("Enter 2 for Prime number:\n ");
+    printf("Enter 3 for Factors of a number:\n ");
+    printf("Enter 4 for Multiplication table of a number:\n ");
+    printf("Enter 5 for Reverse of a number:\n ");
+    printf("Please enter your choice:\n");
+    scanf("%d",&choice);
+    if(choice==1) {
+        int n;
+        int result1;
+        printf("Enter a number to find its Factorial: ");
+        scanf("%d",&n);
+        result1=fact(n);
+        printf("Factorial is %d",result1);
+    }
+    if(choice==2) {
+        int result2,n;
+        printf("Enter a number to check whether Prime or Not: ");
+        scanf("%d",&n);
+        result2=prime(n);
+        if(result2==0)
+            printf("Number is Not Prime: ");
+        else if(result2==1)
+            printf("Number is prime");
+    }
+    if(choice==3) {
+        int i,n;
+        printf("Enter a number to find its Factors of a number: ");
+        scanf("%d",&n);
+        for(i=1;i<n;i++) {
+            if(n%i==0) {
+                printf("Factor is \n %d ",i);
+            }
+        }
+    }
+    if(choice==4) {
+        int i=1,n,ans;
+        printf("Enter a number to find its Multiplication table: ");
+        scanf("%d",&n);
+        while(i<=10) {
+            ans=n*i;
+            printf("%d * %d = %d \n",n*i,ans);
+            i++;
+        }
+    }
+    if(choice==5) {
+        int n,temp=0,rev=0;
+        printf("Enter a number to be Reversed: ");
+        scanf("%d",&n);
+        while(n>0) {
+            temp=n%10;
+            rev=rev*10 + temp;
+            n=n/10;
+        }
+        printf("Reversed number is %d",rev);
+    }
+
+    return 0;
+}

@@ -1,0 +1,41 @@
+//Original Calculor.
+#include<stdio.h>
+void menu() {
+    int ch;
+    printf("Enter 1 for Addition\n");
+    printf("Enter 2 for Subtracion\n");
+    printf("Enter 3 for Multiplication\n");
+    printf("Enter 4 for Division\n");
+    printf("Enter 5 for Modulus\n");
+    printf("Enter 6 for Clear \n");
+    printf("Enter 7 for Exit\n");
+    printf("Enter your choice\n");
+    scanf("%d",&ch);
+    switch(ch) {
+        case 1: int a;
+                a=add();
+                printf("Addition is %d",a);
+                break;
+        case 2: sub();
+                break;
+        case 3: mul();
+                break;
+        case 4: div();
+                break;
+        case 5: mod();
+                break;
+    }
+}
+int add() {
+    int n1,n2;
+    printf("Enter 2 numbers:");
+    scanf("%d%d",&n1,&n2);
+    return n1+n2;
+}
+
+
+int main() {
+    menu();
+
+    return 0;
+}

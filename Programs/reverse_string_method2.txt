@@ -1,0 +1,38 @@
+//Calculating length of a string.
+
+#include<stdio.h>
+#include<string.h>
+void scanString(char str[]) {
+    printf("Enter a string:\n");
+    scanf("%19s",str);
+}
+void printString(char str[]) {
+    printf("\nEntered string is:\n%s",str);
+
+}
+void printString2(char str[]) {
+    printf("\nReversed string is:\n%s",str);
+}
+
+void sreverse(char str[]) {
+    int x=0;
+    int y=strlen(str)-1;
+    char temp;
+    while(x<y) {
+    temp=str[x];
+    str[x]=str[y];
+    str[y]=temp;
+    x++;
+    y--;
+    }
+}
+int main() {
+    int flag;
+    char str[20];
+    scanString(str);
+    printString(str);
+    strlen(str);
+    sreverse(str);
+    printString2(str);
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main() {
+    FILE *fp;
+    char ch;
+    fp=fopen("F:/C Programming/FileHandlingTesting/Notepad/bubbleSort.txt","a");
+    if(fp==NULL) {
+        printf("\nFile not created ! ");
+        exit(0);
+    }
+    while((ch=fgetchar())!='n')
+        putc(ch,fp);
+    fclose(fp);
+
+    return 0;
+}

@@ -1,0 +1,93 @@
+        //BANK WEBSITE:
+
+#include<stdio.h>
+#include<conio.h>
+int ch,totalAmount=10000,dAmount=0,wAmount=0,tAmount=0,minimumBalance=2500,a;
+char n;
+
+void deposite() {
+    printf("\nTotal available amount is %d ",totalAmount);
+    printf("\nEnter the amount to be Deposited ");
+    scanf("%d",&dAmount);
+        totalAmount+=dAmount;
+}
+
+void withdraw() {
+    printf("\nTotal available amount is %d ",totalAmount);
+    printf("\nThe Minimum balance is %d ",minimumBalance);
+    printf("\nEnter the amount to be Withdrawn ");
+    scanf("%d",&wAmount);
+    if(wAmount<(totalAmount-minimumBalance))
+        totalAmount-=wAmount;
+    else
+        printf("\nPlease enter a lesser amount to maintain Minimum balance!");
+}
+
+void transfer() {
+    printf("Total available amount is %d ",totalAmount);
+    printf("\nThe Minimum balance is %d ",minimumBalance);
+    printf("Enter the amount to be Transfered ");
+    scanf("%d",tAmount);
+    if(tAmount<(totalAmount-minimumBalance))
+        totalAmount-=tAmount;
+    else
+        printf("\nPlease enter a lesser  amount to maintain Minimum balance!");
+}
+
+void check() {
+    printf("\nTotal Amount is %d ",totalAmount);
+    printf("\nTotal Amount Withrwawn is %d ",wAmount);
+    printf("\nTotal Amount Transfered is %d ",tAmount);
+}
+
+int menu() {
+    printf("\nEnter 1 to DEPOSITE an amount:");
+    printf("\nEnter 2 to WITHDRAW an amount:");
+    printf("\nEnter 3 to TRANSFER an amount:");
+    printf("\nEnter 4 to CHECK BALANCE:");
+    printf("\nEnter 5 to EXIT:");
+    printf("\n\nPlease enter your choice:");
+    scanf("%d",&ch);
+    return ch;
+}
+
+void final_view() {
+    printf("\n******************************************************************/n/n");
+    printf("\nName of Account holder is %c ",n);
+    printf("\nAccount number is %d ",a);
+    printf("\nTotal Amount is %d ",totalAmount);
+    printf("\nTotal Amount Withrwawn is %d ",wAmount);
+    printf("\nTotal Amount Transfered is %d ",tAmount);
+    printf("\n\n\nTHANK YOU FOR BANKING WITH US!");
+    printf("\n\n******************************************************************\n");
+}
+
+int main() {
+  while(1) {
+    printf("\nEnter Account holder's Name: ");
+    gets(n);
+    printf("\nEnter your Account_number: ");
+    scanf("%d",&a);
+    switch(menu()) {
+        case 1:
+                deposite();
+                break;
+        case 2:
+                withdraw();
+                break;
+        case 3:
+                transfer();
+                break;
+        case 4:
+                check();
+                break;
+        case 5:
+                final_view();
+                getch();
+                exit(0);
+
+    }
+    getch();
+  }
+  return 0;
+}

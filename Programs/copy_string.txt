@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+void scopy(char b[],char a[]) {
+    int i;
+    for(i=0; b[i]!='\0'; i++) {
+        a[i]=b[i];
+    }
+    a[i]='\0'; //Explitly assigning
+}
+
+int main() {
+    char str1[20],str2[20];
+    printf("Enter string1 ");
+    gets(str1);
+    fflush(stdin);
+    printf("Enter string2 ");
+    gets(str2);
+    scopy(str2,str1);
+    printf("String1 is %s ",str1);
+    printf("String2 is %s ",str2);
+    return 0;
+}

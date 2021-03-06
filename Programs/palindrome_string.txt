@@ -1,0 +1,35 @@
+		//Check whether a string is Palindrome or Not.
+
+#include<stdio.h>
+#include<string.h>
+void scanString(char str[]) {
+    printf("Enter a string:\n");
+    scanf("%19s",str);
+}
+void printString(char str[]) {
+    printf("\nEntered string is:\n%s",str);
+}
+
+int palindromeCheck(char str[]) {
+    int x=0,y=strlen(str)-1;
+    while(x<y) {
+        if(str[x]!=str[y])
+            return 0;
+            x++;
+            y--;
+    }
+    return 1;
+}
+int main() {
+    int flag;
+    char str[20];
+    scanString(str);
+    printString(str);
+    strlen(str);
+    flag=palindromeCheck(str);
+    if(flag==0)
+        printf("\nEntered string %s is NOT Palindrome:\n",str);
+    else if(flag==1)
+        printf("\nEntered string %s is Palindrome:\n",str);
+    return 0;
+}

@@ -1,0 +1,36 @@
+//Bubble sort.
+//Date:8/9/2019.
+
+#include<stdio.h>
+
+void scanArray(int a[],int s) {
+    int i;
+    printf("Enter an array of 7 elements:\n");
+    for(i=0;i<s;i++)
+        scanf("%d",&a[i]);
+}
+void printArray(int a[],int s) {
+    int i;
+    for(i=0;i<s;i++)
+        printf(" %d ",a[i]);
+}
+void bubbleSort(int a[],int s) {
+    int i,j,temp;
+    for(i=s-1;i>0;i--) {
+        for(j=0;j<i;j++) {
+            if(a[j]>a[j+1]) {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+}
+int main() {
+    int arr[7];
+    scanArray(arr,7);
+    printArray(arr,7);//Before sorting
+    bubbleSort(arr,7);
+    printArray(arr,7);//After sorting
+    return 0;
+}

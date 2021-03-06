@@ -1,0 +1,123 @@
+
+
+#include<stdio.h>
+
+struct identity {
+
+    int rollno;
+    char name[100];
+};
+
+typedef struct identity identity;
+
+struct date {
+    int day;
+    int month;
+    int year;
+};
+
+typedef struct date date;
+
+void begin(identity s1[100],int ans,date s2[100]) {
+    int i,val,marks;
+    float per;
+    char ch;
+    static int flag=1;
+    FILE *fp;
+    fp=fopen("F:/C Programming/Notepad saved C programs/C_PROJECTS/wadiafile.txt","a+");
+    if(flag==1) {
+        fprintf(fp,"\n\nNEW ADDMISSION RECORDS, NOWROSJEE WADIA COLLEGE (fybsc-cs)\n");
+        flag++;
+    }
+    switch(ans) {
+        int n;
+        case 1: printf("\n\n\tWelcome to Record Add Section !\n\n\n");
+                printf("Enter number of Records to Add\t");
+                fflush(stdin);
+                scanf("%d",&n);
+                fflush(stdin);
+                for(i=0; i<n; i++) {
+                    printf("\nNew Student's record in process...\n\n");
+                    printf("\n\n\t\t\t\tRecord %d",i+1);
+                    printf("\n\nEnter Rollno\t");
+                    scanf("%d",&s1[i].rollno);
+                    fflush(stdin);
+                    printf("\n\nEnter Full name (ex. Name, Father's Name, Surname)\t");
+                    fflush(stdin);
+                    gets(s1[i].name);
+                }
+                printf("\n\n\n\nEntered record is: ");
+                fprintf(fp,"\n\nSR.NO\tROLLNO\tNAME");
+                for(i=0; i<n; i++) {
+                    printf("\n\n\t\t\t\tRecord %d",i+1);
+                    fprintf(fp,"\n\n%d\t%d\t%s",i+1,s1[i].rollno,s1[i].name);
+                    printf("\n\nRollno: %d, Full name: %s",s1[i].rollno,s1[i].name);
+                }
+
+        case 2:
+                fp=fopen("F:/C Programming/Notepad saved C programs/C_PROJECTS/wadiafile.txt","r");
+                if(fp==NULL) {
+                    printf("\n\nCannot open student records !");
+                    exit(0);
+                }
+                while((ch=fgetc(fp))!=EOF)
+                    printf("%c",ch);
+
+
+        case 3: printf("\n\nEnter Rollno to be Searched\t");
+                fflush(stdin);
+                scanf("%d",&val);
+                if(s1[i].rollno==val) {
+                    printf("\nRollno: %d found at SR.NO: %d",val,i);
+                } else
+                    printf("\n%d: Not Found",val);
+
+
+        case 6: printf("\n\nPUNE UNIVERSITY 'SEM-1' EXAM");
+                printf("\n\nEnter Total marks out of 600\t");
+                fflush(stdin);
+                scanf("%d",&marks);
+                per=(marks*100)/600.00;
+                printf("\n\nPercentage is: %f",per);
+
+
+
+
+
+
+        fclose(fp);
+
+
+
+    } //switch
+
+}
+
+int menu() {
+    int ch;
+    printf("\n\n\tWelcome to Nowrosjee Wadia College,Pune  1\n");
+    printf("\n\n\nEnter 1 to Add a Student Record\t");
+    printf("\nEnter 2 to View Student Record\t");
+    printf("\nEnter 3 to Search Rollno\t");
+    printf("\nEnter 4 to Sort by Rollnos\t");
+    printf("\nEnter 5 to Sort by Name\t");
+    printf("\nEnter 6 to Calculate Percentage\t");
+    fflush(stdin);
+    scanf("%d",&ch);
+    return ch;
+}
+
+
+int main() {
+    int ans;
+    identity s1[100];
+    date s2[100];
+    ans=menu();
+    begin(s1,ans,s2);
+
+
+
+
+    return 0;
+
+}

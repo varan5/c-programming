@@ -1,0 +1,21 @@
+// WELCOME TO COMPUTER SCIENCE DEPT(N.WADIA COLLEGE)
+
+#include<stdio.h>
+int main() {
+    int choice;
+    printf("CULTURAL AND DIGITAL INDIA!\n");
+    printf("Some countries have Moon on their national flag\n");
+    printf("India has its flag on the Moon!\n");
+    printf("Enter 1 to see India's Space Research Program:\n");
+    printf("Enter 2 to see India's Digital Progress:\n");
+    printf("Enter 3 to see India's Culture:\n");
+    printf("Please enter a choice:\n");
+    scanf("%d",&choice);
+    if(choice==1)
+        printf("SUCCESSFULLY LAUNCHED CHANDRAYAAN 2 :\n");
+    if(choice==2)
+        printf("PAYTM,GOOGLE PAY,CASH LESS TRANSACTIONS:\n");
+    if(choice==3)
+        printf("22 OFFICIAL LANGUAGES SPOKEN BUT STILL UNITED:\n");
+    return 0;
+}

@@ -1,0 +1,472 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+char name[50],ch,c,C;
+int cor=0,wro=0,total=5,life=2,ans,lifeans,totallife=2,lifeused=0,amount=0,per=1000;
+
+
+void gameName() {
+    printf("\n\t\tQUIZ GAME\n");
+    printf("\n\nEnter Player Name\t");
+    gets(name);
+}
+
+void gameRules() {
+    printf("\n\n\n\tRules:\n");
+    printf("\t_______");
+    printf("\n\n\n1: There are 5 questions (compulsory).");
+    printf("\n2: Lifelines available=2 (Press L to use).");
+    printf("\n3: Gift of each correct answer = RS 1000.");
+    printf("\n\n***************************************************************");
+    printf("\n\nEnter any key to Start game\t");
+    getch();
+    printf("\n\n\n\tGAME STARTS:\n");
+    printf("\t____________\n\n");
+}
+
+void gamePlay() {
+
+    q1();
+    q2();
+    q3();
+    q4();
+    q5();
+}
+
+void correct() {
+    printf("\n\tCorrect answer");
+        printf("\nGift Won = Rs 1000");
+    cor+=1;
+    amount+=1000;
+}
+
+void wrong() {
+    printf("\n\tWrong answer");
+    printf("\nGift Won = Rs 0");
+    wro++;
+}
+
+void validate() {
+    printf("\n\nInvalid Input\nPlease enter your option again\t");
+}
+
+int lifeline() {
+    if(life>0) {
+        printf("\nYou are eligible for lifeline,remaining lifelines = %d",life);
+        printf("\n\tCorrect Option =%c",C);
+        life--;
+        lifeused+=1;
+        printf("\n\nPlease enter your Final answer\t");
+        return 1;
+    }
+    else {
+        printf("\nYou are not eligible for lifeline ,remaining lifelines =%d",life);
+        printf("\nPlease enter your Final answer\t");
+        return 0;
+    }
+    return 10;
+}
+
+
+
+void q1() {
+    int ans,lifeans;
+    printf("\n\n\nQ1: Who developed C ?\n");
+    printf("\t\t\t\tEnter L for Lifeline,Remaining %d from %d",life,totallife);
+    printf("\nA: Bjarne Strostup");
+    printf("\nB: Denis Ritche");
+    printf("\nC: Charles Babbage");
+    printf("\nD: Todd Jobs\t");
+    fflush(stdin);
+    scanf("%c",&ch);
+    c='b';
+    C='B';
+    if(ch=='l'||ch=='L') {
+        label1:
+        lifeans=lifeline();
+        if(lifeans==1) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='b';
+            C='B';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+        else if(lifeans==0) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='b';
+            C='B';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+      }
+
+
+       else if(ch=='a'||ch=='A'||ch=='b'||ch=='B'||ch=='c'||ch=='C'||ch=='d'||ch=='D') {
+
+        c='b';
+        C='B';
+        if(ch==c||ch==C)
+            correct();
+
+        else
+            wrong();
+
+    }
+
+
+     else {
+        while(ch!='a'||ch!='A'||ch!='b'||ch!='B'||ch!='c'||ch!='C'||ch!='d'||ch!='D'||ch!='l'||ch!='L') {
+            printf("\nInvalid choice please enter again\t");
+            fflush(stdin);
+            scanf("%c",&ch);
+            if(ch=='L'||ch=='l')
+                goto label1;
+            c='b';
+            C='B';
+            if(ch==c||ch==C) {
+                correct();
+                break;
+            }
+
+            else {
+                wrong();
+                break;
+            }
+        }
+
+        }
+
+}
+
+void q2() {
+    int ans,lifeans;
+    printf("\n\n\nQ2: Who is CEO of Google ?\n");
+    printf("\t\t\t\tEnter L for Lifeline,Remaining %d from %d",life,totallife);
+    printf("\nA: Bill Gates");
+    printf("\nB: Denis Ritche");
+    printf("\nC: Satya Nadela");
+    printf("\nD: Sunder Pichai\t");
+    fflush(stdin);
+    scanf("%c",&ch);
+    c='d';
+    C='D';
+    if(ch=='l'||ch=='L') {
+        label2:
+        lifeans=lifeline();
+        if(lifeans==1) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='d';
+            C='D';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+        else if(lifeans==0) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='d';
+            C='D';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+      }
+
+
+       else if(ch=='a'||ch=='A'||ch=='b'||ch=='B'||ch=='c'||ch=='C'||ch=='d'||ch=='D') {
+
+        c='d';
+        C='D';
+        if(ch==c||ch==C)
+            correct();
+
+        else
+            wrong();
+
+    }
+
+
+     else {
+        while(ch!='a'||ch!='A'||ch!='b'||ch!='B'||ch!='c'||ch!='C'||ch!='d'||ch!='D'||ch!='l'||ch!='L') {
+            printf("\nInvalid choice please enter again\t");
+            fflush(stdin);
+            scanf("%c",&ch);
+            if(ch=='l'||ch=='L')
+                goto label2;
+            c='d';
+            C='D';
+            if(ch==c||ch==C) {
+                correct();
+                break;
+            }
+
+            else {
+                wrong();
+                break;
+            }
+        }
+
+        }
+
+}
+
+void q3() {
+    int ans,lifeans;
+    printf("\n\n\nQ3: Which Indian cricketer is called as Captain-Cool ?\n");
+    printf("\t\t\t\tEnter L for Lifeline,Remaining %d from %d",life,totallife);
+    printf("\nA: Virat Kohli");
+    printf("\nB: MS Dhoni");
+    printf("\nC: Rohit Sharma");
+    printf("\nD: Sachin Tendulkar");
+    fflush(stdin);
+    scanf("%c",&ch);
+    c='b';
+    C='B';
+    if(ch=='l'||ch=='L') {
+        label3:
+        lifeans=lifeline();
+        if(lifeans==1) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='b';
+            C='B';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+        else if(lifeans==0) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='b';
+            C='B';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+      }
+
+
+       else if(ch=='a'||ch=='A'||ch=='b'||ch=='B'||ch=='c'||ch=='C'||ch=='d'||ch=='D') {
+
+        c='b';
+        C='B';
+        if(ch==c||ch==C)
+            correct();
+
+        else
+            wrong();
+
+    }
+
+
+     else {
+        while(ch!='a'||ch!='A'||ch!='b'||ch!='B'||ch!='c'||ch!='C'||ch!='d'||ch!='D'||ch!='l'||ch!='L') {
+            printf("\nInvalid choice please enter again\t");
+            fflush(stdin);
+            scanf("%c",&ch);
+            if(ch=='l'||ch=='L')
+                goto label3;
+            c='b';
+            C='B';
+            if(ch==c||ch==C) {
+                correct();
+                break;
+            }
+
+            else {
+                wrong();
+                break;
+            }
+        }
+
+        }
+
+}
+
+void q4() {
+    int ans,lifeans;
+    printf("\n\n\nQ4: Who is President of Russia(2019) ?\n");
+    printf("\t\t\t\tEnter L for Lifeline,Remaining %d from %d",life,totallife);
+    printf("\nA: Donald Trump");
+    printf("\nB: Charles Trudo");
+    printf("\nC: Vladimir Putin");
+    printf("\nD: Queen Elizabetht");
+    fflush(stdin);
+    scanf("%c",&ch);
+    c='c';
+    C='C';
+    if(ch=='l'||ch=='L') {
+        label4:
+        lifeans=lifeline();
+        if(lifeans==1) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='c';
+            C='C';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+        else if(lifeans==0) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='c';
+            C='C';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+      }
+
+
+       else if(ch=='a'||ch=='A'||ch=='b'||ch=='B'||ch=='c'||ch=='C'||ch=='d'||ch=='D') {
+
+        c='c';
+        C='C';
+        if(ch==c||ch==C)
+            correct();
+
+        else
+            wrong();
+
+    }
+
+
+     else {
+        while(ch!='a'||ch!='A'||ch!='b'||ch!='B'||ch!='c'||ch!='C'||ch!='d'||ch!='D'||ch!='l'||ch!='L') {
+            printf("\nInvalid choice please enter again\t");
+            fflush(stdin);
+            scanf("%c",&ch);
+            if(ch=='l'||ch=='L')
+                goto label4;
+            c='c';
+            C='C';
+            if(ch==c||ch==C) {
+                correct();
+                break;
+            }
+
+            else {
+                wrong();
+                break;
+            }
+        }
+
+        }
+}
+
+void q5() {
+    int ans,lifeans;
+    printf("\n\n\nQ5: What is the Population of India(2019) ?\n");
+    printf("\t\t\t\tEnter L for Lifeline,Remaining %d from %d",life,totallife);
+    printf("\nA: 130 Billion");
+    printf("\nB: 100 Billion");
+    printf("\nC: 150 Billion");
+    printf("\nD: 115 Billion\t");
+    fflush(stdin);
+    scanf("%c",&ch);
+    c='a';
+    C='A';
+    if(ch=='l'||ch=='L') {
+        label5:
+        lifeans=lifeline();
+        if(lifeans==1) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='a';
+            C='A';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+        else if(lifeans==0) {
+            fflush(stdin);
+            scanf("%c",&ch);
+            c='a';
+            C='A';
+            if(ch==c||ch==C)
+                correct();
+            else
+                wrong();
+        }
+      }
+
+
+       else if(ch=='a'||ch=='A'||ch=='b'||ch=='B'||ch=='c'||ch=='C'||ch=='d'||ch=='D') {
+
+        c='a';
+        C='A';
+        if(ch==c||ch==C)
+            correct();
+
+        else
+            wrong();
+
+    }
+
+
+     else {
+        while(ch!='a'||ch!='A'||ch!='b'||ch!='B'||ch!='c'||ch!='C'||ch!='d'||ch!='D'||ch!='l'||ch!='L') {
+            printf("\nInvalid choice please enter again\t");
+            fflush(stdin);
+            scanf("%c",&ch);
+            if(ch=='l'||ch=='L')
+                goto label5;
+            c='a';
+            C='A';
+            if(ch==c||ch==C) {
+                correct();
+                break;
+            }
+
+            else {
+                wrong();
+                break;
+            }
+        }
+
+        }
+
+}
+
+void gameEnd() {
+    printf("\n\n\nThank you for playing the Quiz Game\n");
+    printf("\nPress any key to View your Score & Prizes Won\t");
+    getch();
+    printf("\n\n***********************************************************************************************");
+    printf("\n\nPlayer name: %s",name);
+    printf("\n Questions answered: %d",total);
+    printf("\n Correct answers: %d",cor);
+    printf("\n Wrong answers: %d",wro);
+    printf("\n Lifelines used: %d from %d",lifeused,totallife);
+    printf("\n\nEnter any key to View Gift Won\t");
+    getch();
+    printf("\n\tAmount Won: %d (%d * %d)",amount,cor,per);
+    printf("\nCongrats !!!, %s Won a Brand New PHONE",name);
+    printf("\n\n\n***********************************************************************************************");
+    printf("\n\n\tPress Enter to End Quiz Game\t");
+    getch();
+}
+
+int main() {
+    gameName();
+    gameRules();
+    gamePlay();
+    gameEnd();
+    return 0;
+}

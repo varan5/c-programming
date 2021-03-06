@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int slenght(char a[]) {
+    int x=0;
+    while(a[x]!='\0')
+        x++;
+    return x;
+}
+
+int main() {
+    int ans;
+    char str[20];
+    printf("Enter a string to count its lenght:\n");
+    gets(str);
+    ans=slenght(str);
+    printf("Lenght of %s is %d ",str,ans);
+    return 0;
+}

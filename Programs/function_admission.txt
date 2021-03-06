@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+float science(int a,int b,int c,int d,int e,int f) {
+    float percentage;
+    percentage=(a+b+c+d+e+f)/6;
+    return percentage;
+}
+
+float arts(int a,int b,int c,int d,int e,int f) {
+    float percentage;
+    percentage=(a+b+c+d+e+f)/6;
+    return percentage;
+}
+
+int main() {
+    int choice;
+    printf("WELCOME TO THE ADMISSION PROCESS FOR WADIA COLLEGE (YEAR 2019-20): \n");
+    printf("Enter 1 for persuing SCIENCE courses: \n");
+    printf("Enter 2 for persuing COMMERCE courses: \n");
+    printf("Enter 3 for persuing ARTS courses: \n");
+    printf("Please enter your choice!: \n");
+    scanf("%d",&choice);
+    if(choice==1) {
+        int s1,s2,s3,s4,s5,s6;
+        float result1;
+        printf("Welcome to SCIENCE department: ");
+        printf("Enter your marks in 6 subjects: \n");
+        scanf("%d%d%d%d%d%d",&s1,&s2,&s3,&s4,&s5,&s6);
+        result1=science(s1,s2,s3,s4,s5,s6);
+        printf("Your Percentage is: %f",result1);
+        if(result1>=70) {
+            int ch;
+            printf("Congratulations!\nYou are eligible for all courses of Science: ");
+            printf("Press 1 for BSC Comp-Science:\n");
+            printf("Press 2 for BSC Electronics:\n");
+            printf("Press 3 for BSC Chemistry:\n");
+            printf("Press 4 for BSC Physics:\n");
+            printf("Press 5 for BSC Maths:\n");
+            scanf("%d",&ch);
+        }
+        else if(result1>=40&&result1<=69) {
+            int ch;
+            printf("Congratulations!\nYou are eligible for all courses of Science: ");
+            printf("Press 1 for BSC Comp-Science:\n");
+            printf("Press 2 for BSC Electronics:\n");
+            printf("Press 3 for BSC Chemistry:\n");
+            printf("Press 4 for BSC Physics:\n");
+            printf("Press 5 for BSC Maths:\n");
+            scanf("%d",&ch);
+        }
+    }
+    if(choice==2) {
+        printf("Welcome to the Commerce section:\n");
+        int maths;
+        printf("Enter your 12th Board Marks for MATHS subject: ");
+        scanf("%d",&maths);
+        if(maths>=50) {
+            printf("Congratulations!\nYou are eligible for all Commerce courses:\n");
+        }
+        else if(maths<50&&maths>=35) {
+            printf("Please try for admission in the 2nd round which will be after 10 days:\n");
+        }
+    }
+    if(choice==3) {
+        printf("Welcome to the Arts section:\n");
+        int result3;
+        int s1,s2,s3,s4,s5,s6;
+        printf("Enter your marks in 6 subjects: \n");
+        scanf("%d%d%d%d%d%d",&s1,&s2,&s3,&s4,&s5,&s6);
+        result3=arts(s1,s2,s3,s4,s5,s6);
+        printf("Your Percentage is: %f",result3);
+        if(result3>=50) {
+            printf("Congratulation!\nYou are elligible for all Arts courses:\n");
+        }
+        else if(result3<=49&&result3>35) {
+            printf("Please wait for 2nd round admission which will be after 10 days:\n");
+        }
+    }
+    return 0;
+}

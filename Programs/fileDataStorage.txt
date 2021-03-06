@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+    FILE *fp;
+    char name[30];
+    int age;
+    float salary;
+    fp=fopen("F:/C Programming/Notepad saved C programs/fileHandlingDataStorage.txt","w");
+    if(fp==NULL) {
+        printf("\nFile not created ! ");
+        exit(0);
+    }
+
+    printf("\nEnter your name\t");
+    gets(name);
+    printf("\nEnter your age\t");
+    scanf("%d",&age);
+    printf("\nEnter your salary\t");
+    scanf("%f",&salary);
+    fprintf(fp,"Name is %s ",name);
+    fprintf(fp,"Age is %d ",age);
+    fprintf(fp,"Salary is %f ",salary);
+    fclose(fp);
+
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int lcm(int a,int b) {
+    int i,greatNo;
+    greatNo=a>b?a:b;
+    i=greatNo;
+    while(1) {
+        if(i%a==0&&i%b==0)
+        break;
+        i+=greatNo;  //i=i+greatNo;
+    }
+    return i;
+}
+int main() {
+    int num1,num2,result;
+    printf("Program to find LCM of 2 numbers:\n");
+    printf("Enter 2 numbers:\n");
+    scanf("%d%d",&num1,&num2);
+    result=lcm(num1,num2);
+    printf("LCM of %d and %d is %d",num1,num2,result);
+    return 0;
+}

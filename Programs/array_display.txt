@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main() {
+    int arr[6];
+    int i;
+    printf("Enter an array of 6 elements:\n");
+    for(i=0;i<6;i++)
+        scanf("%d",&arr[i]);
+
+    for(i=0;i<6;i++)
+    printf("\nElements entered in an array are %d ",arr[i]);
+    return 0;
+}

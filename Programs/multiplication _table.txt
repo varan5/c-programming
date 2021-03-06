@@ -1,0 +1,15 @@
+// Program to make Multiplication table.
+// Date: 18/07/2019.
+
+#include<stdio.h>
+int main() {
+    int i,num,ans;
+    printf("Enter the number for finding its Multiplication table :\n\n");
+    scanf("%d",&num);
+    for(i=1;i<=12;i++) {
+        ans=num*i;
+    printf("%d * %d = %d \n",num,i,ans);
+    }
+    printf("\n\nProgram ends here. ");
+    return 0;
+}
